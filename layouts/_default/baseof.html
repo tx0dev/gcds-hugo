@@ -1,0 +1,68 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>{{block "title" . }}
+    {{.Site.Title }} 
+    {{ end }}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome 6 kit for this demo page. Anyone can create a free kit for open source. -->
+    <script src="https://kit.fontawesome.com/892cb27850.js" crossorigin="anonymous"></script>
+    <!-- GC Design System -->
+    <link rel="stylesheet" href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@latest/dist/gcds/gcds.css">
+    <script type="module" src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@latest/dist/gcds/gcds.esm.js"></script>
+    <script nomodule src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@latest/dist/gcds/gcds.js"></script>
+
+    <style>
+      html {
+        font-size: 16px;
+      }
+      body {
+        font-size: var(--gcds-font-sizes-text);
+        line-height: var(--gcds-line-heights-text);
+        color: var(--gcds-color-grayscale-1000);
+        font-family: var(--gcds-font-families-body), sans-serif;
+        margin: 0;
+        animation: fade 0.05s normal forwards ease-in-out;
+      }
+    </style>
+  </head>
+  <body style="margin: 0">
+    <!-- ------------- Verify banner ------------- -->
+    <!--<gcds-verify-banner></gcds-verify-banner>-->
+
+      {{ block "main" . }}
+      {{ end }}
+
+    <gcds-footer
+      display="compact"
+      contextual-heading="Additional content"
+      contextual-links='{ "Components": "#","Tokens": "#", "Foundations": "#"}'
+    >
+    </gcds-footer>
+  </body>
+</html>

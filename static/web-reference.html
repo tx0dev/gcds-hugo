@@ -1,0 +1,565 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome 6 kit for this demo page. Anyone can create a free kit for open source. -->
+    <script
+      src="https://kit.fontawesome.com/892cb27850.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Local components -->
+<!-- GC Design System -->
+<link rel="stylesheet" href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@latest/dist/gcds/gcds.css">
+<script type="module" src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@latest/dist/gcds/gcds.esm.js"></script>
+<script nomodule src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@latest/dist/gcds/gcds.js"></script>
+
+    <style>
+      html {
+        font-size: 16px;
+      }
+      body {
+        font-size: var(--gcds-font-sizes-text);
+        line-height: var(--gcds-line-heights-text);
+        color: var(--gcds-color-grayscale-1000);
+        font-family: var(--gcds-font-families-body), sans-serif;
+        margin: 0;
+        animation: fade 0.05s normal forwards ease-in-out;
+      }
+    </style>
+  </head>
+  <body style="margin: 0">
+    <!-- ------------- Verify banner ------------- -->
+
+    <!--<gcds-verify-banner></gcds-verify-banner>-->
+
+    <!-- ------------- Header ------------- -->
+
+    <gcds-header
+      lang="en"
+      lang-href="fr"
+      signature-variant="colour"
+      skip-to-href="#"
+    >
+      <!-- ------------- Search ------------- -->
+
+      <gcds-search slot="search" action="/search.html" placeholder="search ces-docs"></gcds-search>
+
+      <!-- ------------- Theme & topic menu ------------- -->
+
+      <!-- <gcds-topic-menu slot="menu"></gcds-topic-menu> -->
+
+      <!-- ------------- Breadcrumbs ------------- -->
+
+      <!-- Breadcrumb with canada.ca link -->
+      <gcds-breadcrumbs slot="breadcrumb">
+        <gcds-breadcrumbs-item href="#">Design System</gcds-breadcrumbs-item>
+        <gcds-breadcrumbs-item href="#">Components</gcds-breadcrumbs-item>
+      </gcds-breadcrumbs>
+
+      <!-- Breadcrumb with outcanada.ca link -->
+      <!-- <gcds-breadcrumbs hide-canada-link slot="breadcrumb">
+        <gcds-breadcrumbs-item href="#">Breadcrumb</gcds-breadcrumbs-item>
+        <gcds-breadcrumbs-item href="#">Breadcrumb</gcds-breadcrumbs-item>
+        <gcds-breadcrumbs-item href="#">Breadcrumb</gcds-breadcrumbs-item>
+      </gcds-breadcrumbs> -->
+    </gcds-header>
+
+    <gcds-container size="xl" centered tag="main">
+      <h1 class="text-center mb-500">GC Design System</h1>
+
+      <h2>Components</h2>
+
+      <gcds-search></gcds-search>
+
+      <!-- ------------- Alerts ------------- -->
+
+      <h3 class="mt-500 mb-400 bb-sm">Alerts</h3>
+      <gcds-alert heading="Success alert" alert-role="success">
+        <p>Example content</p>
+      </gcds-alert>
+      <gcds-alert heading="Info alert" alert-role="info">
+        <p>Example content</p>
+      </gcds-alert>
+      <gcds-alert heading="Warning alert" alert-role="warning">
+        <p>Example content</p>
+      </gcds-alert>
+      <gcds-alert heading="Danger alert" alert-role="danger">
+        <p>Example content</p>
+      </gcds-alert>
+
+      <!-- ------------- Buttons ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Buttons</h3>
+      <gcds-button button-role="primary">Primary</gcds-button>
+      <gcds-button button-role="secondary">Secondary</gcds-button>
+      <gcds-button button-role="danger">Danger</gcds-button>
+      <gcds-button button-role="skip-to-content">Skip to content</gcds-button>
+      <gcds-button type="link" button-style="text-only" href="#"
+        >Link</gcds-button
+      >
+      <gcds-button
+        type="link"
+        button-style="text-only"
+        href="#"
+        target="_blank"
+      >
+        External Link
+      </gcds-button>
+
+      <!-- ------------- Cards ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Cards</h3>
+
+      <gcds-grid
+        tag="div"
+        columns-desktop="1fr 1fr 1fr"
+        columns-tablet="1fr 1fr"
+        columns="1fr"
+        gap="250"
+      >
+        <gcds-card
+          card-title="Link card number 1"
+          title-element="h4"
+          href="#red"
+          description="This is a card"
+          tag="Core"
+          img-src="https://picsum.photos/480/270"
+        >
+        </gcds-card>
+
+        <gcds-card
+          card-title="Link card number 2 with a really long title for some reason"
+          title-element="h4"
+          href="#red"
+          description="This is a card with an img and possibly more"
+          img-src="https://picsum.photos/480/270"
+        >
+        </gcds-card>
+
+        <gcds-card
+          card-title="Link card number 3"
+          title-element="h4"
+          href="#red"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra ex at scelerisque vulputate. Morbi malesuada interdum augue. Nam id quam non orci aliquam malesuada sit amet ut magna. Integer hendrerit lorem sit amet risus dignissim aliquam."
+          img-src="https://picsum.photos/480/270"
+        >
+        </gcds-card>
+      </gcds-grid>
+
+      <gcds-grid
+        tag="div"
+        columns-desktop="1fr 1fr"
+        columns-tablet="1fr"
+        columns="1fr"
+        gap="250"
+        class="d-block mt-250"
+      >
+        <gcds-card
+          type="action"
+          card-title="Action card number 1"
+          title-element="h4"
+          href="#red"
+          description="Morbi malesuada interdum augue. Nam id quam non orci aliquam malesuada sit amet ut magna. Integer hendrerit lorem sit amet risus dignissim aliquam."
+          img-src="https://picsum.photos/480/270"
+        >
+          <gcds-button type="button" button-role="secondary" slot="footer"
+            >Action</gcds-button
+          >
+        </gcds-card>
+        <gcds-card
+          type="action"
+          card-title="Action card number 2"
+          title-element="h4"
+          href="#red"
+          description="This is a card with an img and possibly more"
+          img-src="https://picsum.photos/480/270"
+        >
+          <gcds-button type="button" button-role="secondary" slot="footer"
+            >Action</gcds-button
+          >
+        </gcds-card>
+      </gcds-grid>
+
+      <gcds-card
+        class="mt-400"
+        card-title="Card not in column"
+        href="#red"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra ex at scelerisque vulputate. Morbi malesuada interdum augue. Nam id quam non orci aliquam malesuada sit amet ut magna. Integer hendrerit lorem sit amet risus dignissim aliquam."
+      >
+      </gcds-card>
+
+      <!-- ------------- Containers ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Containers</h3>
+      <gcds-container size="full" border padding="400">
+        <p>
+          I'm a responsive container. My size is only limited by the size of my
+          parent container.
+        </p>
+      </gcds-container>
+      <br />
+      <gcds-container size="lg" centered border padding="400">
+        <p>I'm a large, centred container. My max size is 64rem (1024px).</p>
+      </gcds-container>
+      <br />
+      <gcds-container size="xs" border padding="400">
+        <p>I'm an extra-small container. My max size is 20rem (320px).</p>
+      </gcds-container>
+
+      <!-- ------------- Details ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Details</h3>
+      <gcds-details details-title="Find out more">
+        <p>Details about stuff.</p>
+      </gcds-details>
+
+      <!-- ------------- Stepper + Form Elements ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">
+        Form elements (including stepper and error summary)
+      </h3>
+      <gcds-stepper current-step="1" total-steps="3"></gcds-stepper>
+      <form novalidate>
+        <gcds-error-summary listen></gcds-error-summary>
+
+        <gcds-input
+          input-id="form-name"
+          label="Name"
+          hint="Please enter your full name."
+          required
+        ></gcds-input>
+
+        <gcds-input
+          input-id="form-email"
+          label="Email"
+          type="email"
+          hint="Please enter your email."
+          required
+        ></gcds-input>
+
+        <gcds-input
+          input-id="form-number"
+          type="number"
+          size="10"
+          label="Phone number"
+          hint="Please enter a 10 digits number."
+          required
+        ></gcds-input>
+
+        <gcds-textarea
+          textarea-id="form-message"
+          label="Message"
+          hint="This is a hint."
+          character-count="400"
+          required
+        ></gcds-textarea>
+
+        <gcds-checkbox
+          checkbox-id="form-checkbox"
+          label="Do you like pizza?"
+          required
+          hint="This answer is yes."
+        ></gcds-checkbox>
+
+        <gcds-fieldset
+          fieldset-id="fieldset"
+          legend="Radio button group"
+          hint="They are in a fieldset"
+          required
+        >
+          <gcds-radio
+            radio-id="form-radio"
+            label="Radio 1 label"
+            hint="This is a hint."
+            name="radio"
+          ></gcds-radio>
+          <gcds-radio
+            radio-id="form-radio1"
+            label="Radio 2 label"
+            hint="This is a hint."
+            name="radio"
+          ></gcds-radio>
+        </gcds-fieldset>
+        <gcds-fieldset
+          fieldset-id="fieldset2"
+          legend="Checkbox group"
+          hint="Select all that apply."
+          required
+        >
+          <gcds-checkbox
+            checkbox-id="form-checkbox-group1"
+            label="checkbox 1 label"
+            hint="This is a hint."
+            name="checkbox"
+          ></gcds-checkbox>
+          <gcds-checkbox
+            checkbox-id="form-checkbox-group2"
+            label="checkbox 2 label"
+            hint="This is a hint."
+            name="checkbox"
+          ></gcds-checkbox>
+        </gcds-fieldset>
+
+        <gcds-select
+          select-id="form-select"
+          label="Name"
+          hint="Please enter your full name."
+          required
+          default-value="Please select an option"
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </gcds-select>
+
+        <gcds-file-uploader
+          uploader-id="form-uploader"
+          label="Upload file"
+          hint="You can upload multiple files, but they have to be png's."
+          accept="image/png"
+          multiple
+          required
+        ></gcds-file-uploader>
+
+        <gcds-button type="submit"> Submit </gcds-button>
+      </form>
+
+      <!-- ------------- Grid ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Grid</h3>
+      <gcds-grid
+        tag="article"
+        columns-desktop="1fr 1fr 1fr 1fr"
+        columns-tablet="1fr 1fr"
+        columns="1fr"
+        gap="500"
+      >
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it
+          to make a type specimen book. It has survived not only five centuries,
+          but also the leap into electronic typesetting, remaining essentially
+          unchanged.
+        </p>
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it
+          to make a type specimen book. It has survived not only five centuries,
+          but also the leap into electronic typesetting, remaining essentially
+          unchanged.
+        </p>
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it
+          to make a type specimen book. It has survived not only five centuries,
+          but also the leap into electronic typesetting, remaining essentially
+          unchanged.
+        </p>
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it
+          to make a type specimen book. It has survived not only five centuries,
+          but also the leap into electronic typesetting, remaining essentially
+          unchanged.
+        </p>
+      </gcds-grid>
+
+      <!-- ------------- Text ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Text</h3>
+      <gcds-text margin-bottom="400"
+        >This text is primary text using the default body size. The margin
+        bottom is set to "400". The character limit is set to "true" (default
+        value) which means that the text will take up a maximum of 65 characters
+        per line.</gcds-text
+      >
+
+      <gcds-text character-limit="false" margin-bottom="400"
+        >This text is primary text using the default body size. The margin
+        bottom is set to "400". The characters limit is set to "false" which
+        means that the text will take up all available space.</gcds-text
+      >
+
+      <gcds-text text-role="secondary" margin-bottom="400"
+        >This text is secondary text using the default body size. The margin
+        bottom is set to "400". The character limit is set to "true" (default
+        value) which means that the text will take up a maximum of 65 characters
+        per line.</gcds-text
+      >
+
+      <div class="bg-dark mb-400 p-200">
+        <gcds-text text-role="light"
+          >This text is light text using the default body size. The character
+          limit is set to "true" (default value) which means that the text will
+          take up a maximum of 65 characters per line.</gcds-text
+        >
+      </div>
+
+      <gcds-text size="caption" margin-bottom="400"
+        >This text is primary text using the caption size. The margin bottom is
+        set to "400". The character limit is set to "true" (default value) which
+        means that the text will take up a maximum of 65 characters per
+        line.</gcds-text
+      >
+
+      <gcds-text margin-bottom="400"
+        >This text is primary text using the default body size
+        <strong>with some bold text included</strong>. The margin bottom is set
+        to "400". The character limit is set to "true" (default value) which
+        means that the text will take up a maximum of 65 characters per
+        line.</gcds-text
+      >
+
+      <gcds-text margin-bottom="400"
+        >This text is primary text using the default body size
+        <em>with some italic text included</em>. The margin bottom is set to
+        "400". The character limit is set to "true" (default value) which means
+        that the text will take up a maximum of 65 characters per
+        line.</gcds-text
+      >
+
+      <!-- ------------- Icons ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Icons</h3>
+      <gcds-icon name="tree" size="caption" margin-right="200"></gcds-icon>
+      <gcds-icon name="tree" size="text" margin-right="200"></gcds-icon>
+      <gcds-icon name="tree" size="h6" margin-right="200"></gcds-icon>
+      <gcds-icon name="tree" size="h5" margin-right="200"></gcds-icon>
+      <gcds-icon name="tree" size="h4" margin-right="200"></gcds-icon>
+      <gcds-icon name="tree" size="h3" margin-right="200"></gcds-icon>
+      <gcds-icon name="tree" size="h2" margin-right="200"></gcds-icon>
+      <gcds-icon name="tree" size="h1" margin-right="200"></gcds-icon>
+
+      <h4 class="mt-500 mb-300">Fixed width icons (square ratio)</h4>
+      <gcds-icon name="tree" size="text" fixed-width></gcds-icon>
+      <gcds-icon name="folder" size="text" fixed-width></gcds-icon>
+      <gcds-icon name="fire" size="text" fixed-width></gcds-icon>
+      <gcds-icon name="utensils" size="text" fixed-width></gcds-icon>
+
+      <h4 class="mt-500 mb-300">Variable width icons (auto width)</h4>
+      <gcds-icon name="tree" size="text"></gcds-icon>
+      <gcds-icon name="folder" size="text"></gcds-icon>
+      <gcds-icon name="fire" size="text"></gcds-icon>
+      <gcds-icon name="utensils" size="text"></gcds-icon>
+
+      <!-- ------------- Pagination ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Pagination</h3>
+      <gcds-pagination
+        display="list"
+        label="List pagination"
+        type="list"
+        total-pages="22"
+        current-page="8"
+        url='{"queryStrings": { "querystring::offset": 10 }, "fragment": "main" }'
+        pageChangeHandler="{}"
+      ></gcds-pagination>
+
+      <gcds-pagination
+        display="simple"
+        label="Simple Pagination"
+        previous-href="#"
+        previous-label="Previous"
+        next-href="#"
+        next-label="Next page"
+      ></gcds-pagination>
+
+      <!-- ------------- Phase Banner ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Phase banner</h3>
+      <gcds-phase-banner banner-role="primary">
+        <gcds-icon name="tree" size="sm" slot="banner-icon-left"></gcds-icon>
+        <p slot="banner-text">Exciting announcement.</p>
+      </gcds-phase-banner>
+
+      <!-- ------------- Screen reader only ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Screen reader only</h3>
+      <gcds-text>There is invisible text below this</gcds-text>
+      <gcds-sr-only>
+        <gcds-text
+          >This text is only available to assistive technologies.</gcds-text
+        >
+      </gcds-sr-only>
+
+      <!-- ------------- Side nav ------------- -->
+
+      <gcds-side-nav class="mt-700" label="Sidenav">
+        <gcds-nav-link href="#red">Installation</gcds-nav-link>
+        <gcds-nav-link href="#red" current>Foundations</gcds-nav-link>
+        <gcds-nav-link href="#red">Components</gcds-nav-link>
+        <gcds-nav-group menu-label="Contact submenu" open-trigger="Contact">
+          <gcds-nav-link href="#red">Site</gcds-nav-link>
+          <gcds-nav-link href="#red">GitHub</gcds-nav-link>
+          <gcds-nav-group
+            menu-label="Sub level submenu"
+            open-trigger="Sub level"
+          >
+            <gcds-nav-link href="#red">Site</gcds-nav-link>
+            <gcds-nav-link href="#red">GitHub</gcds-nav-link>
+            <gcds-nav-link href="#red">Slack</gcds-nav-link>
+          </gcds-nav-group>
+        </gcds-nav-group>
+      </gcds-side-nav>
+
+      <!-- ------------- Top nav ------------- -->
+
+      <h3 class="mt-700 mb-400 bb-sm">Top navigation</h3>
+      <gcds-top-nav label="topbar" alignment="right" lang="en">
+        <gcds-nav-link href="#red" slot="home">Home</gcds-nav-link>
+        <gcds-nav-link href="#red">Installation</gcds-nav-link>
+        <gcds-nav-link href="#red">Foundations</gcds-nav-link>
+        <gcds-nav-link href="#red" current>Components</gcds-nav-link>
+        <gcds-nav-group
+          menu-label="Contact us submenu"
+          open-trigger="Contact us"
+        >
+          <gcds-nav-link href="#red">Form</gcds-nav-link>
+          <gcds-nav-link href="#red">GitHub</gcds-nav-link>
+          <gcds-nav-link href="#red">Slack</gcds-nav-link>
+        </gcds-nav-group>
+      </gcds-top-nav>
+
+      <!-- ------------- Date Modified ------------- -->
+
+      <gcds-date-modified>2023-01-26</gcds-date-modified>
+    </gcds-container>
+
+    <gcds-footer
+      display="compact"
+      contextual-heading="Additional content"
+      contextual-links='{ "Components": "#","Tokens": "#", "Foundations": "#"}'
+    >
+    </gcds-footer>
+  </body>
+</html>

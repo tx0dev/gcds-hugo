@@ -1,0 +1,22 @@
+{{ define "main" }}
+    <gcds-header
+      lang="en"
+      lang-href="fr"
+      signature-variant="colour"
+      skip-to-href="#"
+    >
+      <!-- ------------- Search ------------- -->
+
+      <gcds-search slot="search" action="/search.html" placeholder="search ces-docs"></gcds-search>
+
+      <!-- ------------- Theme & topic menu ------------- -->
+
+      <!-- <gcds-topic-menu slot="menu"></gcds-topic-menu> -->
+      {{ partial "breadcrumb" . }}
+    </gcds-header>
+    <gcds-container size="xl" centered tag="main">
+      <h1 class="text-center">{{ .Title }}</h1>
+      {{ .Content }}
+      <gcds-date-modified>{{ .Date.Format "2006-01-02" }}</gcds-date-modified>
+    </gcds-container>
+{{ end }}

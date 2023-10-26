@@ -1,0 +1,7 @@
+baseURL: 'http://ces-docs.azure.nrcan-rncan.gc.ca/'
+languageCode: 'en-ca'
+title: 'GCDS test site'
+disableKinds:
+- 'taxonomy'
+- 'term'
+defaultContentLanguage: en

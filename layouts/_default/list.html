@@ -1,0 +1,40 @@
+{{ define "main" }}
+    <gcds-header
+      lang="en"
+      lang-href="fr"
+      signature-variant="colour"
+      skip-to-href="#"
+    >
+      <!-- ------------- Search ------------- -->
+
+      <gcds-search slot="search" action="/search.html" placeholder="search ces-docs"></gcds-search>
+
+      <!-- ------------- Theme & topic menu ------------- -->
+
+      <!-- <gcds-topic-menu slot="menu"></gcds-topic-menu> -->
+
+      <!-- ------------- Breadcrumbs ------------- -->
+
+      <!-- Breadcrumb with canada.ca link -->
+      {{ partial "breadcrumb" . }}
+
+      <!-- Breadcrumb with outcanada.ca link -->
+      <!-- <gcds-breadcrumbs hide-canada-link slot="breadcrumb">
+        <gcds-breadcrumbs-item href="#">Breadcrumb</gcds-breadcrumbs-item>
+        <gcds-breadcrumbs-item href="#">Breadcrumb</gcds-breadcrumbs-item>
+        <gcds-breadcrumbs-item href="#">Breadcrumb</gcds-breadcrumbs-item>
+      </gcds-breadcrumbs> -->
+    </gcds-header>
+    <gcds-container size="xl" centered tag="main">
+      <h1 class="text-center mb-500">{{ .Title }}</h1>
+      <ul>
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</a>
+        </li>
+      {{ end }}
+      </ul>
+      {{ .Content }}
+      <gcds-date-modified>{{ .Date.Format "2006-01-02" }}</gcds-date-modified>
+    </gcds-container>
+{{ end }}
