@@ -34,7 +34,7 @@ Download/obtain [hugo](https://gohugo.io/) through your favorite source, mine wa
 
 then run `hugo serve` and you'll have a website. That's it, no dependency to deal with.
 
-## This is VERY experiemental
+## This is VERY experimental
 
 I'm not a web designer/programmer. I'm literally ripping appart the sample page from the [gcds-components](https://github.com/cds-snc/gcds-components), loading the JS from their CDN, and breaking hugo templating engine.... a lot.
 
